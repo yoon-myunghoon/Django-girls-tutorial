@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="user">
+        <h1>{{ user.username }}</h1>
+        <p>{{ user.email }}</p>
+        <hr>
+        <a class="btn btn-default" href="{% url 'profile' request.user.pk %}">회원정보수정</a>
+        <a class="btn btn-default" href="{% url 'user-remove' request.user.pk %}">회원탈퇴</a>
+    </div>
+{% endblock %}
